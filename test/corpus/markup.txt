@@ -283,4 +283,18 @@ _itatlic with an\_ underscore in the middle_ now normal
 _*hello*_ is bold and italic
 
 
+================================================================================
+Links
+================================================================================
+
+This is a test invalid://www.thisshouldbecomeacomment.com,
+http://www.test.com, https://positive.com, http://
+
 --------------------------------------------------------------------------------
+
+(source_file
+  (line_comment)
+  (link)
+  (link)
+  (link))
+

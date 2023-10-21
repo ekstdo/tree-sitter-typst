@@ -161,6 +161,7 @@ module.exports = grammar({
             $.reference,
             $.emphasis,
             $.strong,
+            $.link
         )),
 
         identifier: $ => prec(2, /[_\p{XID_Start}][_\p{XID_Continue}]*/),
@@ -237,6 +238,12 @@ module.exports = grammar({
             '%',
             '.', // this should be removed
         ))),
+
+        link: $ => seq(
+            'http',
+            optional('s'),
+            '://',
+            optional(prec.left(repeat1(/\S/)))),
 
         _code_mode: $ => seq(
             '#',
